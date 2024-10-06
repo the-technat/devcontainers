@@ -1,0 +1,12 @@
+[user]
+	email = {{ .email }}
+	name = {{ .name }}
+  signingkey = ~/.ssh/id_gh
+[pull]
+	rebase = true
+[init]
+  defaultBranch = main
+[gpg]
+  format = ssh
+[commit]
+  gpgSign = true

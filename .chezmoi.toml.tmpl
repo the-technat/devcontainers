@@ -1,0 +1,24 @@
+# Defaults
+{{ $email := "technat@technat.ch" -}}
+{{ $name := "Nathanael Liechti" -}}
+{{ $username := "technat" -}}
+
+# try to guess the username from USER
+{{ if not (eq (env "USER") "") -}}
+{{ $username = env "USER" -}}
+{{ end -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+[data]
+  email = {{ $email | quote }}
+  name = {{ $name | quote }}
+  username = {{ $username | quote }}
+
+[git]
+  autoCommit = true
+  autoPush = true
+
+# On every read of the source-state this script is executed
+# https://www.chezmoi.io/reference/configuration-file/hooks/
+[hooks.read-source-state.pre]
+  command = "{{ .chezmoi.sourceDir }}/install-zsh.sh"

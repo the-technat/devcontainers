@@ -1,0 +1,5 @@
+# packages are installed using APT
+packages:
+  - "vim"
+  - "gcc"
+  - "unzip"

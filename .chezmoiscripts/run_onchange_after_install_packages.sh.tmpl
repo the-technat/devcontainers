@@ -1,0 +1,2 @@
+# https://www.chezmoi.io/user-guide/advanced/install-packages-declaratively/
+sudo apt install -y {{ range .packages }}{{ . }}{{ end }}
