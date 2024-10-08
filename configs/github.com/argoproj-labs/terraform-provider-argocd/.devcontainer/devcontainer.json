@@ -1,0 +1,28 @@
+{
+  "name": "terraform-provider-argocd",
+  "image": "mcr.microsoft.com/devcontainers/go:1.21-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "enableNonRootDocker": "false",
+      "disableIp6tables": true 
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "1.9.7"
+    },
+    "ghcr.io/mpriscella/features/kind:1": {
+      "version": "v0.20.0" 
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "1.27.11"
+    },
+    "ghcr.io/rio/features/kustomize:1": {},
+    "ghcr.io/guiyomh/features/goreleaser:0": {},
+    "ghcr.io/audacioustux/devcontainers/argo:1": {
+      "argocd": "2.8.13" 
+    }
+  },
+  "forwardPorts": [
+    8080 
+  ]
+}
+
